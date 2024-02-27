@@ -1,0 +1,9 @@
+/Users/debruynemaxime/Documents/EPSI - 4ème année/SUJETS MSPR/MSPR BLOC4/ProductsApp/src/main/java/com/back/product/ProductApplication.java
+/Users/debruynemaxime/Documents/EPSI - 4ème année/SUJETS MSPR/MSPR BLOC4/ProductsApp/src/main/java/com/back/product/services/ProductService.java
+/Users/debruynemaxime/Documents/EPSI - 4ème année/SUJETS MSPR/MSPR BLOC4/ProductsApp/src/main/java/com/back/product/mapper/ProductMapper.java
+/Users/debruynemaxime/Documents/EPSI - 4ème année/SUJETS MSPR/MSPR BLOC4/ProductsApp/src/main/java/com/back/product/model/Product.java
+/Users/debruynemaxime/Documents/EPSI - 4ème année/SUJETS MSPR/MSPR BLOC4/ProductsApp/src/main/java/com/back/product/controller/ProductController.java
+/Users/debruynemaxime/Documents/EPSI - 4ème année/SUJETS MSPR/MSPR BLOC4/ProductsApp/src/main/java/com/back/product/dto/ProductDto.java
+/Users/debruynemaxime/Documents/EPSI - 4ème année/SUJETS MSPR/MSPR BLOC4/ProductsApp/src/main/java/com/back/product/controller/api/ProductApiInterface.java
+/Users/debruynemaxime/Documents/EPSI - 4ème année/SUJETS MSPR/MSPR BLOC4/ProductsApp/src/main/java/com/back/product/repository/ProductRepository.java
+/Users/debruynemaxime/Documents/EPSI - 4ème année/SUJETS MSPR/MSPR BLOC4/ProductsApp/src/main/java/com/back/product/services/impl/ProductsServiceImpl.java
