@@ -1,5 +1,5 @@
 com/back/product/ProductApplication.class
-com/back/product/services/impl/ProductsServiceImpl.class
+com/back/product/services/impl/ProductServiceImpl.class
 com/back/product/services/ProductService.class
 com/back/product/repository/ProductRepository.class
 com/back/product/mapper/ProductMapper.class
