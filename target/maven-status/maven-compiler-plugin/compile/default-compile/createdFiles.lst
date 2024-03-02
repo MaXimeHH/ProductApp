@@ -1,9 +1,0 @@
-com/back/product/ProductApplication.class
-com/back/product/services/impl/ProductServiceImpl.class
-com/back/product/services/ProductService.class
-com/back/product/repository/ProductRepository.class
-com/back/product/mapper/ProductMapper.class
-com/back/product/model/Product.class
-com/back/product/controller/api/ProductApiInterface.class
-com/back/product/controller/ProductController.class
-com/back/product/dto/ProductDto.class
