@@ -6,10 +6,7 @@ import com.back.product.services.ProductService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,27 +25,27 @@ public class ProductController implements ProductApiInterface {
     }
 
     //récupérer un produit par son id
-    @GetMapping("getProductById")
+    @PostMapping("getProductById")
     public ResponseEntity<ProductDto> getProductById(@RequestBody Long id) {
         return ResponseEntity.ok(this.productService.getProductById(id));
     }
 
     //ajouter un produit
-    @GetMapping("addProduct")
+    @PostMapping("addProduct")
     public ResponseEntity<ProductDto> addProduct(@RequestBody ProductDto product) {
         return ResponseEntity.ok(this.productService.addProduct(product));
     }
 
     //modifier un produit
-    @GetMapping("updateProduct")
+    @PostMapping("updateProduct")
     public ResponseEntity<ProductDto> updateProduct(@RequestBody ProductDto product) {
         return ResponseEntity.ok(this.productService.updateProduct(product));
     }
 
-    //supprimer un produit
-    @GetMapping("deleteProduct")
-    public ResponseEntity<String> deleteProduct(@RequestBody Long id) {
-        return ResponseEntity.ok(this.productService.deleteProduct(id));
-    }
+ //   //supprimer un produit
+ //   @DeleteMapping("deleteProduct")
+//    public ResponseEntity<String> deleteProduct(@RequestBody Long id) {
+//        return ResponseEntity.ok(this.productService.deleteProduct(id));
+//
 
 }

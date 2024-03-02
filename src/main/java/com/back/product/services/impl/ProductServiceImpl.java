@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDto> getAllProducts() {
         List<ProductDto> result = new ArrayList<>();
-        this.productRepository.getAllProducts().forEach(
+        this.productRepository.findAll().forEach(
             product -> result.add(this.productMapper.productToProductDto(product))
         );
         return result;
@@ -30,20 +30,20 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto getProductById(Long id) {
-        return this.productMapper.productToProductDto(this.productRepository.getProductById(id));
+        return this.productMapper.productToProductDto(this.productRepository.findById(id).get());
     }
 
     @Override
     public ProductDto addProduct(ProductDto product) {
         Product productToAdd = this.productMapper.productDtoToProduct(product);
 
-        this.productRepository.addProduct(productToAdd);
+        this.productRepository.save(productToAdd);
         return this.productMapper.productToProductDto(productToAdd);
     }
 
     @Override
     public ProductDto updateProduct(ProductDto product) {
-        Product productToUpdate = this.productRepository.getProductById(product.getId());
+        Product productToUpdate = this.productRepository.findById(product.getId()).get();
 
         productToUpdate.setPrice(product.getPrice());
         productToUpdate.setCreatedAt(product.getCreatedAt());
@@ -53,12 +53,14 @@ public class ProductServiceImpl implements ProductService {
         productToUpdate.setColor(product.getColor());
         productToUpdate.setStock(product.getStock());
 
-        return this.productMapper.productToProductDto(this.productRepository.updateProduct(productToUpdate));
+        this.productRepository.save(productToUpdate);
+
+        return this.productMapper.productToProductDto(productToUpdate);
     }
 
-    @Override
-    public String deleteProduct(Long id) {
-        this.productRepository.deleteProduct(id);
-        return "La suppression du produit a été effectuée!";
-    }
+//   @Override
+//    public String deleteProduct(Long id) {
+//       this.productRepository.deleteProduct(id);
+//        return "La suppression du produit a été effectuée!";
+//    }
 }
