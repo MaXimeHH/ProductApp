@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">productapp</a> &gt; <a href="index.source.html" class="el_package">com.back.product.services.impl</a> &gt; <span class="el_source">ProductServiceImpl.java</span></div><h1>ProductServiceImpl.java</h1><pre class="source lang-java linenums">package com.back.product.services.impl;
+
+import com.back.product.dto.ProductDto;
+import com.back.product.mapper.ProductMapper;
+import com.back.product.model.Product;
+import com.back.product.repository.ProductRepository;
+import com.back.product.services.ProductService;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+<span class="nc" id="L15">@AllArgsConstructor</span>
+public class ProductServiceImpl implements ProductService {
+
+    private ProductRepository productRepository;
+
+    private ProductMapper productMapper;
+
+    @Override
+    public List&lt;ProductDto&gt; getAllProducts() {
+<span class="nc" id="L24">        List&lt;ProductDto&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L25">        this.productRepository.getAllProducts().forEach(</span>
+<span class="nc" id="L26">            product -&gt; result.add(this.productMapper.productToProductDto(product))</span>
+        );
+<span class="nc" id="L28">        return result;</span>
+    }
+
+    @Override
+    public ProductDto getProductById(Long id) {
+<span class="nc" id="L33">        return this.productMapper.productToProductDto(this.productRepository.getProductById(id));</span>
+    }
+
+    @Override
+    public ProductDto addProduct(ProductDto product) {
+<span class="nc" id="L38">        Product productToAdd = this.productMapper.productDtoToProduct(product);</span>
+
+<span class="nc" id="L40">        this.productRepository.addProduct(productToAdd);</span>
+<span class="nc" id="L41">        return this.productMapper.productToProductDto(productToAdd);</span>
+    }
+
+    @Override
+    public ProductDto updateProduct(ProductDto product) {
+<span class="nc" id="L46">        Product productToUpdate = this.productRepository.getProductById(product.getId());</span>
+
+<span class="nc" id="L48">        productToUpdate.setPrice(product.getPrice());</span>
+<span class="nc" id="L49">        productToUpdate.setCreatedAt(product.getCreatedAt());</span>
+<span class="nc" id="L50">        productToUpdate.setDetails(product.getDetails());</span>
+<span class="nc" id="L51">        productToUpdate.setPrice(product.getPrice());</span>
+<span class="nc" id="L52">        productToUpdate.setDescription(product.getDescription());</span>
+<span class="nc" id="L53">        productToUpdate.setColor(product.getColor());</span>
+<span class="nc" id="L54">        productToUpdate.setStock(product.getStock());</span>
+
+<span class="nc" id="L56">        return this.productMapper.productToProductDto(this.productRepository.updateProduct(productToUpdate));</span>
+    }
+
+    @Override
+    public String deleteProduct(Long id) {
+<span class="nc" id="L61">        this.productRepository.deleteProduct(id);</span>
+<span class="nc" id="L62">        return &quot;La suppression du produit a été effectuée!&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
