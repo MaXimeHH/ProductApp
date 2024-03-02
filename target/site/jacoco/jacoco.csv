@@ -1,6 +1,10 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 productapp,com.back.product.model,Product,59,0,0,0,10,0,17,0,17,0
+<<<<<<< HEAD
 productapp,com.back.product.services.impl,ProductServiceImpl,107,0,0,0,21,0,7,0,7,0
+=======
+productapp,com.back.product.services.impl,ProductServiceImpl,101,0,0,0,20,0,7,0,7,0
+>>>>>>> develop
 productapp,com.back.product,ProductApplication,8,0,0,0,3,0,2,0,2,0
 productapp,com.back.product.controller,ProductController,38,0,0,0,7,0,7,0,7,0
 productapp,com.back.product.dto,ProductDto,59,0,0,0,10,0,17,0,17,0

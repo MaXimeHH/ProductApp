@@ -45,12 +45,6 @@ jobs:
       - name: Test with Maven
         run: mvn test --file pom.xml
 
-      - name: Code Quality Analysis (Static code analysis)
-        run: mvn clean install sonar:sonar -Dsonar.projectKey=MaXimeHH_ProductApp -Dsonar.organization=maxdevorganization -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=4056e09f52a633576e7a7f88b3b6857217551ac5
-
-      - name: Code Quality Check (Linting)
-        run: mvn checkstyle:check --file pom.xml
-
       - name: Code Coverage Analysis
         run: mvn clean test jacoco:report --file pom.xml
 

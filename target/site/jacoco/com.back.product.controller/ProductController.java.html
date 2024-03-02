@@ -6,14 +6,26 @@ import com.back.product.services.ProductService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.http.ResponseEntity;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.*;
+=======
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+>>>>>>> develop
 
 import java.util.List;
 
 @RestController
 @RequestMapping(&quot;/products/&quot;)
+<<<<<<< HEAD
 <span class="nc" id="L15">@AllArgsConstructor</span>
 <span class="nc" id="L16">@NoArgsConstructor</span>
+=======
+<span class="nc" id="L18">@AllArgsConstructor</span>
+<span class="nc" id="L19">@NoArgsConstructor</span>
+>>>>>>> develop
 public class ProductController implements ProductApiInterface {
 
     private ProductService productService;
@@ -21,6 +33,7 @@ public class ProductController implements ProductApiInterface {
     //récupérer tous les produits
     @GetMapping(&quot;getAllProducts&quot;)
     public ResponseEntity&lt;List&lt;ProductDto&gt;&gt; getAllProducts() {
+<<<<<<< HEAD
 <span class="nc" id="L24">        return ResponseEntity.ok(this.productService.getAllProducts());</span>
     }
 
@@ -47,5 +60,34 @@ public class ProductController implements ProductApiInterface {
 <span class="nc" id="L47">        return ResponseEntity.ok(this.productService.deleteProduct(id));</span>
 
     }
+=======
+<span class="nc" id="L27">        return ResponseEntity.ok(this.productService.getAllProducts());</span>
+    }
+
+    //récupérer un produit par son id
+    @GetMapping(&quot;getProductById&quot;)
+    public ResponseEntity&lt;ProductDto&gt; getProductById(@RequestBody Long id) {
+<span class="nc" id="L33">        return ResponseEntity.ok(this.productService.getProductById(id));</span>
+    }
+
+    //ajouter un produit
+    @GetMapping(&quot;addProduct&quot;)
+    public ResponseEntity&lt;ProductDto&gt; addProduct(@RequestBody ProductDto product) {
+<span class="nc" id="L39">        return ResponseEntity.ok(this.productService.addProduct(product));</span>
+    }
+
+    //modifier un produit
+    @GetMapping(&quot;updateProduct&quot;)
+    public ResponseEntity&lt;ProductDto&gt; updateProduct(@RequestBody ProductDto product) {
+<span class="nc" id="L45">        return ResponseEntity.ok(this.productService.updateProduct(product));</span>
+    }
+
+    //supprimer un produit
+    @GetMapping(&quot;deleteProduct&quot;)
+    public ResponseEntity&lt;String&gt; deleteProduct(@RequestBody Long id) {
+<span class="nc" id="L51">        return ResponseEntity.ok(this.productService.deleteProduct(id));</span>
+    }
+
+>>>>>>> develop
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
