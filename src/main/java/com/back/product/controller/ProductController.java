@@ -42,10 +42,9 @@ public class ProductController implements ProductApiInterface {
         return ResponseEntity.ok(this.productService.updateProduct(product));
     }
 
- //   //supprimer un produit
- //   @DeleteMapping("deleteProduct")
-//    public ResponseEntity<String> deleteProduct(@RequestBody Long id) {
-//        return ResponseEntity.ok(this.productService.deleteProduct(id));
-//
+    //supprimer un produit@DeleteMapping("deleteProduct")
+    public ResponseEntity<String> deleteProduct(@RequestBody Long id) {
+        return ResponseEntity.ok(this.productService.deleteProduct(id));
 
+    }
 }

@@ -13,5 +13,5 @@ public interface ProductService {
 
     public ProductDto updateProduct(ProductDto product);
 
-   // public String deleteProduct(Long id);
+    public String deleteProduct(Long id);
 }

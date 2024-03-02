@@ -42,11 +42,10 @@ public class ProductController implements ProductApiInterface {
 <span class="nc" id="L42">        return ResponseEntity.ok(this.productService.updateProduct(product));</span>
     }
 
- //   //supprimer un produit
- //   @DeleteMapping(&quot;deleteProduct&quot;)
-//    public ResponseEntity&lt;String&gt; deleteProduct(@RequestBody Long id) {
-//        return ResponseEntity.ok(this.productService.deleteProduct(id));
-//
+    //supprimer un produit@DeleteMapping(&quot;deleteProduct&quot;)
+    public ResponseEntity&lt;String&gt; deleteProduct(@RequestBody Long id) {
+<span class="nc" id="L47">        return ResponseEntity.ok(this.productService.deleteProduct(id));</span>
 
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
