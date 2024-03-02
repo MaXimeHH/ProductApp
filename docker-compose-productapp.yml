@@ -32,5 +32,8 @@ services:
       SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MariaDBDialect
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
 
-volumes:
-  mariadb_data:
+  sonarqube:
+    image: sonarqube
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
